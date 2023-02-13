@@ -18,9 +18,11 @@ public class StringLoops {
       }
     }
     int[] result = new int[searchTermCount];
+    int count = 0;
     for (int pos = 0; pos < text.length(); pos++) {
       if (text.substring(pos,pos+1).equals(searchTerm)) {
-        result[pos] = pos;
+        result[count] = pos;
+        count++;
       }
     }
     return result;
@@ -35,9 +37,10 @@ public class StringLoops {
     return false;
   }
 
+
   public static void main(String[] args) {
     //System.out.println(reverseCharacters("taco cat"));
-    //System.out.println(Arrays.toString(indexesOfAll("attack", "a")));
-    System.out.println(hasRepeatedConsecutives("rook"));
+    System.out.println(Arrays.toString(indexesOfAll("attack", "b")));
+    //System.out.println(hasRepeatedConsecutives("rook"));
   }
 }
