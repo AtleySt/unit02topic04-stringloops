@@ -37,10 +37,24 @@ public class StringLoops {
     return false;
   }
 
+  public static String reverseWords(String sentence) {
+    String word = "";
+    String result = "";
+    for (int pos = 0; pos < sentence.length(); pos++) {
+      if (!sentence.substring(pos,pos+1).equals(" ")) {
+        word = word + sentence.substring(pos,pos+1);
+      } else if (sentence.substring(pos,pos+1).equals(" ")) {
+        result = word + " " + result;
+        word = "";
+      }
+    }
+    return result;
+  }
 
   public static void main(String[] args) {
     //System.out.println(reverseCharacters("taco cat"));
-    System.out.println(Arrays.toString(indexesOfAll("attack", "b")));
+    //System.out.println(Arrays.toString(indexesOfAll("attack", "b")));
     //System.out.println(hasRepeatedConsecutives("rook"));
+    System.out.println(reverseWords("the quick brown fox"));
   }
 }
