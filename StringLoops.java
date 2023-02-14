@@ -40,6 +40,7 @@ public class StringLoops {
   public static String reverseWords(String sentence) {
     String word = "";
     String result = "";
+    sentence = sentence + " ";
     for (int pos = 0; pos < sentence.length(); pos++) {
       if (!sentence.substring(pos,pos+1).equals(" ")) {
         word = word + sentence.substring(pos,pos+1);
